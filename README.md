@@ -1,1 +1,1 @@
-# Rock
+This repository will contain materials that implement the logic of the cube's interaction with the environment

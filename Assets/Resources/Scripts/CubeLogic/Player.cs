@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
         standardState = new StandardState();
         metalState = new MetalState();
 
-        currentState = fieryState;
+        currentState = liquidState;
     }
 
 	private void OnTriggerEnter2D(Collider2D collision)

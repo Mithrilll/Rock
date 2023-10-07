@@ -1,11 +1,13 @@
-﻿using Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials;
-using System;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Resources.Scripts.CubeLogic.CubeStates
 {
 	public class MetalState : CubeState
 	{
-		public override void Accept(Material material)
+		public MetalState(Sprite sprite) : base(sprite) { }
+
+		public override void Accept(EnvironmentMaterials.Material material)
 		{
 			throw new NotImplementedException();
 		}

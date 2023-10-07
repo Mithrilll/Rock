@@ -16,16 +16,16 @@ public class CubeMovement : MonoBehaviour
         _inMovement = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_inMovement) return;
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             MakeMovement(Vector3.right);
             return;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             MakeMovement(Vector3.left);
             return;

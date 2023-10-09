@@ -9,7 +9,7 @@ namespace Assets.Resources.Scripts.CubeLogic.CubeStates
 
 		public override void Accept(EnvironmentMaterials.Material material)
 		{
-			throw new NotImplementedException();
+			material.Visit(this);
 		}
 	}
 }

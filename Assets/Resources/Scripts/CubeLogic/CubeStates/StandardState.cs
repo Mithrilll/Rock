@@ -6,6 +6,9 @@ namespace Assets.Resources.Scripts.CubeLogic.CubeStates
 	{
 		public StandardState(Sprite sprite) : base(sprite) { }
 
-		public override void Accept(EnvironmentMaterials.Material material) { }
+		public override void Accept(EnvironmentMaterials.Material material)
+		{ 
+			material.Visit(this);
+		}
 	}
 }

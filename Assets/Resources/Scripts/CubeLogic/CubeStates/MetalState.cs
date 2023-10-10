@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials;
+using System;
 using UnityEngine;
 
 namespace Assets.Resources.Scripts.CubeLogic.CubeStates
@@ -9,7 +10,7 @@ namespace Assets.Resources.Scripts.CubeLogic.CubeStates
 
 		public override void Accept(EnvironmentMaterials.Material material)
 		{
-			throw new NotImplementedException();
+			material.Visit(this);
 		}
 	}
 }

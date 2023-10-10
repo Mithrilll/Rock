@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 0b06a59177c6907428a5b3c4db53caaa
+=======
+guid: 88e2775e1997b864fac6134922b27aca
+>>>>>>> CubeLogic
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

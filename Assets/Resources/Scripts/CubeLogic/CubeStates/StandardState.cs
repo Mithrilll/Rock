@@ -1,4 +1,4 @@
-﻿using Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials;
+using Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials;
 using System;
 using UnityEngine;
 

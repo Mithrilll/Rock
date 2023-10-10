@@ -64,7 +64,10 @@ public class Player : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		currentState.Accept(collision.GetComponent
-            <Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials.Material>());
+        // if successful
+        if (collision.TryGetComponent(out Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials.Material material))
+        {
+		    currentState.Accept(material);
+        }
 	}
 }

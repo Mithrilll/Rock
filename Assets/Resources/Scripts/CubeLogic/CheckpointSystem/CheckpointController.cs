@@ -11,13 +11,17 @@ public class CheckpointController : MonoBehaviour
 		_instance = this;
 	}
 
+	public CheckpointController Instance { get => _instance;}
+
 	/// Logic:
-	
+
 	public void UpdateCheckpoint(Checkpoint checkpoint)
 	{
 		// TODO: initial checkpoint
 		_currentActiveCheckpoint = checkpoint.transform;
 	}
+
+	public Transform CurrentActiveCheckpoint { get  => _currentActiveCheckpoint; }
 
 	public void LoadGameFromLastCheckpoint()
 	{

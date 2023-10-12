@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials
 {
@@ -11,22 +12,22 @@ namespace Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials
 	{
 		public override void Visit(StandardState state)
 		{
-			throw new NotImplementedException();
-		}
+            GetComponent<BoxCollider2D>().isTrigger = false;
+        }
 
 		public override void Visit(FieryState state)
 		{
-			throw new NotImplementedException();
+			Destroy(this.gameObject, 0.1f);
 		}
 
 		public override void Visit(MetalState state)
 		{
-			throw new NotImplementedException();
-		}
+            Destroy(this.gameObject, 0.1f);
+        }
 
 		public override void Visit(LiquidState state)
 		{
-			throw new NotImplementedException();
+			GetComponent<BoxCollider2D>().isTrigger = false;
 		}
 	}
 }

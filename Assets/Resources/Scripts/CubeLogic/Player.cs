@@ -2,6 +2,7 @@ using Assets.Resources.Scripts.CubeLogic.CubeStates;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -70,4 +71,14 @@ public class Player : MonoBehaviour
 		    currentState.Accept(material);
         }
 	}
+
+    public void ExplodeItself ()
+    {
+        // animation of death 
+    }
+
+    public void MoveTo (Transform newPosition)
+    {
+        this.transform.position = newPosition.position;
+    }
 }

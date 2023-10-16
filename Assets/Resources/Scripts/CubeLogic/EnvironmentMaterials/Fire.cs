@@ -9,12 +9,7 @@ namespace Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials
 	{
 		public override void Visit(StandardState state)
 		{
-			Debug.Log("Ай, кубик умер");
-
-			//TODO: Сообщение КОМУ-ТО о том, что нужно запустить цепочку взаимодействий, чтобы обработать смерть кубика
-
-			// Запрос какому-нибудь обработчику (hadnler'у о том, что нужно запуститься 
-			// с новой контрольной точки
+			KillPlayer();
 		}
 
 		public override void Visit(FieryState state)

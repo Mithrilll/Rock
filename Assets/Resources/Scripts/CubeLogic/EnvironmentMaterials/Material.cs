@@ -8,6 +8,11 @@ namespace Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials
 	{
 		public event Action OnPlayerDeath;
 
+		protected void KillPlayer()
+		{
+			OnPlayerDeath?.Invoke();
+		}
+
 		public abstract void Visit(StandardState state);
 		public abstract void Visit(FieryState state);
 		public abstract void Visit(MetalState state);

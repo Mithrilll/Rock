@@ -1,9 +1,5 @@
 ﻿using Assets.Resources.Scripts.CubeLogic.CubeStates;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials
 {
@@ -11,25 +7,24 @@ namespace Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials
 	{
 		public override void Visit(StandardState state)
 		{
-			// Обработать медленное плавание кубика в воде
-			throw new NotImplementedException();
+			//Do nothing
 		}
 
 		public override void Visit(FieryState state)
 		{
-			// Сообщить о том, что кубик потух
+			KillPlayer();
 		}
 
 		public override void Visit(MetalState state)
 		{
 			// Кубик утонул
-			throw new NotImplementedException();
+			// Do nothing
 		}
 
 		public override void Visit(LiquidState state)
 		{
 			// Обработать быстрое плавание кубика в воде
-			throw new NotImplementedException();
+			// Do nothing
 		}
 	}
 }

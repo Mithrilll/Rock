@@ -4,7 +4,7 @@ using UnityEngine;
 public class CheckpointController : MonoBehaviour
 {
 	private static CheckpointController _instance;
-	private Transform _currentActiveCheckpoint;
+	private Checkpoint _currentActiveCheckpoint;
 
 	private void Awake()
 	{
@@ -18,10 +18,10 @@ public class CheckpointController : MonoBehaviour
 	public void UpdateCheckpoint(Checkpoint checkpoint)
 	{
 		// TODO: initial checkpoint
-		_currentActiveCheckpoint = checkpoint.transform;
+		_currentActiveCheckpoint = checkpoint;
 	}
 
-	public Transform CurrentActiveCheckpoint { get  => _currentActiveCheckpoint; }
+	public Checkpoint CurrentActiveCheckpoint { get  => _currentActiveCheckpoint; }
 
 	public void LoadGameFromLastCheckpoint()
 	{

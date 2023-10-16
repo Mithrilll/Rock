@@ -5,19 +5,14 @@ public class InteractionController : MonoBehaviour
     private static InteractionController _instance;
 	private UIController _UIcontroller;
 	private CheckpointController _checkpointController;
+	private Player _player;
 
-    public InteractionController Instance()
-    {
-        return _instance;
-    }
+    public InteractionController Instance() { return _instance; }
 
 	// Logic goes here:
 
     // Awake method is called before Start method
-	private void Awake()
-	{
-		_instance = this;
-	}
+	private void Awake() { _instance = this; }
 
 	private void Start()
 	{
@@ -26,8 +21,10 @@ public class InteractionController : MonoBehaviour
 		{
 			obj.OnPlayerDeath += HandlePlayerDeath;
 		}
-		_UIcontroller = GetComponent<UIController>();
-		_checkpointController = GetComponent<CheckpointController>().Instance;
+		_UIcontroller = FindObjectOfType<UIController>();
+		_checkpointController = FindObjectOfType<CheckpointController>();
+
+		_player = FindObjectOfType<Player>();
 	}
 
 	/// <summary>
@@ -35,9 +32,9 @@ public class InteractionController : MonoBehaviour
 	/// </summary>
 	private void HandlePlayerDeath()
     {
-		// _player.ExplodeItself();
+		_player.ExplodeItself();
 		_UIcontroller.BlurScreen();
-		// _player.MoveTo(_checkpointController.CurrentActiveCheckpoint);
+		_player.MoveTo(_checkpointController.CurrentActiveCheckpoint.transform);
 		_UIcontroller.UnblurScreen();
 	}
 }

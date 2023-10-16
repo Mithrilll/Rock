@@ -11,7 +11,7 @@ public class Checkpoint : MonoBehaviour
 	private void Start()
 	{
 		_isActivated = false;
-		controller = GetComponent<CheckpointController>();
+		controller = FindObjectOfType<CheckpointController>();
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)

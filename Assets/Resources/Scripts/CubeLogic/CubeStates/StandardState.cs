@@ -11,7 +11,7 @@ namespace Assets.Resources.Scripts.CubeLogic.CubeStates
 
 		public override void Accept(EnvironmentMaterials.Material material)
 		{
-            material.Visit(this);
-        }
+            		material.Visit(this);
+        	}
 	}
 }

@@ -153,7 +153,8 @@ Transform:
   m_LocalPosition: {x: 87.2694, y: -10.500017, z: 0}
   m_LocalScale: {x: 29.520855, y: 13.019162, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1963501138}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1235,6 +1236,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4765966549485732009, guid: ca75e4c88864c7946a954ac8b6f9cfce, type: 3}
   m_PrefabInstance: {fileID: 4765966548658760763}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1963501137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1963501138}
+  - component: {fileID: 1963501139}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1963501138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963501137}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.07155426, y: 0.3773154, z: 1.1385458}
+  m_LocalScale: {x: 0.03387436, y: 0.07680986, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 21463583}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1963501139
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963501137}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.1206398, y: -5.1519537}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 29.334038, y: 13.0121975}
+  m_EdgeRadius: 0
 --- !u!1 &2071446470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,6 +1839,10 @@ PrefabInstance:
     - target: {fileID: 7216727448756291350, guid: 95e264d1496a96b4bbb04aa48d397fa8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7216727448756291352, guid: 95e264d1496a96b4bbb04aa48d397fa8, type: 3}
+      propertyPath: _rollSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7216727448756291355, guid: 95e264d1496a96b4bbb04aa48d397fa8, type: 3}
       propertyPath: m_Name

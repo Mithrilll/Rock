@@ -7,6 +7,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    public static event Action OnDefaultState;
+
     // Allowable cube states
     CubeState currentState;
     FieryState fieryState;
@@ -17,6 +20,11 @@ public class Player : MonoBehaviour
     /// Player's current sprite
     /// </summary>
     SpriteRenderer spriteRenderer;
+
+    private void InvokeDefaultState() 
+    {
+        OnDefaultState?.Invoke();
+    }
 
     void Start()
     {
@@ -32,6 +40,7 @@ public class Player : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+
 		#region ChangingState
 		if (Input.GetKey(KeyCode.Alpha1))
         {
@@ -63,14 +72,22 @@ public class Player : MonoBehaviour
 		spriteRenderer.sprite = state.cubeSprite;
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         // if successful
         if (collision.TryGetComponent(out Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials.Material material))
         {
-		    currentState.Accept(material);
+            currentState.Accept(material);
+            
         }
+  
 	}
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        InvokeDefaultState();
+
+    }
 
     public void ExplodeItself ()
     {

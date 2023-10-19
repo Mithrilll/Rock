@@ -7,7 +7,9 @@ namespace Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials
 {
 	public class Fire : Material
 	{
-		public override void Visit(StandardState state)
+        public static event Action OnFireVisit;
+
+        public override void Visit(StandardState state)
 		{
 			KillPlayer();
 		}
@@ -19,10 +21,11 @@ namespace Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials
 
 		public override void Visit(MetalState state)
 		{
-			throw new NotImplementedException();
+			OnFireVisit?.Invoke();
 		}
 
-		public override void Visit(LiquidState state)
+
+        public override void Visit(LiquidState state)
 		{
 			Destroy(this.gameObject, 1f);
 		}

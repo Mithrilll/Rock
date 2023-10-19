@@ -2,22 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials;
+using System.Threading;
 
 public class CubeMovement : MonoBehaviour
 {
-    [SerializeField] private float _rollSpeed = 3;
+    [SerializeField] private float _rollSpeed = 7f;
     private Rigidbody2D _rb;
     private bool _inMovement;
+
+    private void IncreaseRollSpeed()
+    {
+        _rollSpeed = 10f;
+    }
+
+    private void DecreaseRollSpeed()
+    {
+        _rollSpeed = 4f;
+        
+    }
+
+    private void SetDefaultRollSpeed()
+    {
+        _rollSpeed = 7f;
+    }
 
     // Start is called before the first frame update
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _inMovement = false;
+        Player.OnDefaultState += SetDefaultRollSpeed;
+        Fire.OnFireVisit += DecreaseRollSpeed;
+        PoolOfWater.OnWaterVisitStandartState += DecreaseRollSpeed;
+        PoolOfWater.OnWaterVisitLiquidState += IncreaseRollSpeed;
     }
+
 
     private void FixedUpdate()
     {
+
         if (_inMovement) return;
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))

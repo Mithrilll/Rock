@@ -1,18 +1,20 @@
 ﻿using Assets.Resources.Scripts.CubeLogic.CubeStates;
 using System;
+using System.Diagnostics;
 
 namespace Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials
 {
 	public class Water : Material
 	{
-		public override void Visit(StandardState state)
+
+        public override void Visit(StandardState state)
 		{
 			//Do nothing
 		}
 
 		public override void Visit(FieryState state)
 		{
-			KillPlayer();
+			KillPlayer();			
 		}
 
 		public override void Visit(MetalState state)

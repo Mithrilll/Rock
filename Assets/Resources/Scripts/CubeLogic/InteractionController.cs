@@ -7,6 +7,9 @@ public class InteractionController : MonoBehaviour
 	private CheckpointController _checkpointController;
 	private Player _player;
 
+
+
+
     public InteractionController Instance() { return _instance; }
 
 	// Logic goes here:

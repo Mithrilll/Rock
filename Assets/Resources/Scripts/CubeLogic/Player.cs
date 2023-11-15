@@ -98,4 +98,9 @@ public class Player : MonoBehaviour
     {
         this.transform.position = newPosition.position;
     }
+
+    public CubeState GetCurrentCubeState()
+    {
+        return currentState;
+    }
 }

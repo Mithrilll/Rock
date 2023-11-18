@@ -10,6 +10,7 @@ namespace Assets.Resources.Scripts.CubeLogic.EnvironmentMaterials
 {
 	public class Wood : Material
 	{
+
 		public override void Visit(StandardState state)
 		{
             GetComponent<BoxCollider2D>().isTrigger = false;
